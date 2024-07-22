@@ -85,4 +85,8 @@ docker-compose exec app vendor/bin/phpunit
 To analyze the codebase with PHPStan and find potential bugs, execute:
 ```sh
 docker-compose exec app vendor/bin/phpstan analyse
+```
 
+## Bonus:
+
+Added GitHub Actions to auto-run the test cases and static analysis on every merge to the master branch.
