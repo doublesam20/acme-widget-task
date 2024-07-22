@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  php:
+    build: .
+    volumes:
+      - .:/app
+    command: bash -c "composer install && vendor/bin/phpunit"
