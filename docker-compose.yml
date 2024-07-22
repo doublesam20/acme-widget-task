@@ -1,8 +1,10 @@
-version: '3.8'
-
 services:
-  php:
-    build: .
+  acme-widget-php:
+    build:
+      context: .
+    container_name: acme-widget-php
+    command: bash -c "composer install && vendor/bin/phpunit && vendor/bin/phpstan analyse"
     volumes:
       - .:/app
-    command: bash -c "composer install && vendor/bin/phpunit"
+    ports:
+      - "8088:80"
